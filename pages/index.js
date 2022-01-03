@@ -14,6 +14,7 @@ export default function Home() {
         // store token & parse token di sini
         const jsonToken = JSON.parse(result)
         setToken(jsonToken)
+        alert(result)
         console.log('Token Json', result);         
       });      
     });
