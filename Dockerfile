@@ -11,7 +11,7 @@ FROM node:alpine AS builder
 WORKDIR /webview
 COPY . .
 COPY --from=deps /webview/node_modules ./node_modules
-RUN npm build && npm install --production --ignore-scripts --prefer-offline
+RUN npm run build && npm install --production --ignore-scripts --prefer-offline
 
 # Production image, copy all the files and run next
 FROM node:alpine AS runner
