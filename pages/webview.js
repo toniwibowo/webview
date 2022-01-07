@@ -14,8 +14,6 @@ function App() {
 
   }, [])
 
-  console.log('Token', token);
-
   return (
     <div >
         <title>Create Next App</title>

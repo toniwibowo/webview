@@ -12,13 +12,14 @@ export default function Home() {
     window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
       window.flutter_inappwebview.callHandler('getToken').then(function(result) { 
         const jsonToken = JSON.parse(result)
+        console.log('RESULT', result);
         setToken(jsonToken)  
       });      
     });
 
   }, [])
 
-  console.log('Token', token);
+  
 
   return (
     <div className={styles.container}>
