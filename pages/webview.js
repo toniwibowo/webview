@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import {useEffect,useState} from 'react'
 
 function App() {
@@ -23,7 +21,7 @@ function App() {
         <link rel="icon" href="/favicon.ico" />
 
       <main>
-        <h1 >
+        <h1>
           {
             token === null ? 'You need token to get access Wsebview!' : 'Welcome to Webview!'
           }
