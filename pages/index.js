@@ -19,6 +19,16 @@ export default function Home() {
 
   }, [])
 
+  const getTokenFromNative = () => {
+    window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
+      window.flutter_inappwebview.callHandler('getToken').then(function(result) { 
+        const jsonToken = JSON.parse(result)
+        console.log('RESULT', result);
+        setToken(jsonToken)  
+      });      
+    });
+  }
+
   
 
   return (
@@ -32,7 +42,14 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           {
-            token === null ? 'You need token to get access Webview!' : 'Welcome to Webview!'
+            token === null ?
+            <>
+              <div>You need token to get access Webview!</div>
+              <br />
+              <button onClick={() => getTokenFromNative()}>Get Token</button> 
+            </> 
+            
+            : 'Welcome to Webview!'
           }
           
         </h1>
