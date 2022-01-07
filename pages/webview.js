@@ -14,9 +14,7 @@ function App() {
 
   }, [])
 
-  useEffect(() => {
-    console.log('Token', token);
-  }, [token])
+  console.log('Token', token);
 
   return (
     <div >

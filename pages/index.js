@@ -18,9 +18,7 @@ export default function Home() {
 
   }, [])
 
-  useEffect(() => {
-    console.log('Token', token);
-  }, [token])
+  console.log('Token', token);
 
   return (
     <div className={styles.container}>
