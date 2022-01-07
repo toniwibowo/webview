@@ -5,7 +5,7 @@ function App() {
    
     window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
       window.flutter_inappwebview.callHandler('getToken').then(function(result) {
-        const jsonToken = await JSON.parse(result)
+        const jsonToken = JSON.parse(result)
         setToken(jsonToken)  
       });      
     });
