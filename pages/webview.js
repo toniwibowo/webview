@@ -14,6 +14,10 @@ function App() {
 
   }, [])
 
+  useEffect(() => {
+    console.log('Token', token);
+  }, [token])
+
   return (
     <div >
         <title>Create Next App</title>

@@ -10,16 +10,11 @@ export default function Home() {
   useEffect(() => {
 
     window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-      window.flutter_inappwebview.callHandler('getToken').then(function(result) {            
-        // store token & parse token di sini
+      window.flutter_inappwebview.callHandler('getToken').then(function(result) { 
         const jsonToken = JSON.parse(result)
-        setToken(jsonToken)
-        //alert(result)
-        console.log('Token Json', result);         
+        setToken(jsonToken)  
       });      
     });
-    
-    console.log('just test');
 
   }, [])
 
@@ -44,7 +39,6 @@ export default function Home() {
         </h1>
         
       </main>
-
       
     </div>
   )
